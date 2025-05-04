@@ -23,7 +23,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 
 # vector store
-from langchain_chroma import Chroma
+from langchain.vectorstores import FAISS
 
 ## PDF file loader (loads a single PDF into docs)
 from langchain_community.document_loaders import PyPDFLoader
@@ -106,15 +106,17 @@ if not splits:
 
 @st.cache_resource(show_spinner=False)
 def get_vectorstore(_splits):
-
-    return Chroma.from_documents(
+    """
+    Builds (or loads) a FAISS index from your document splits.
+    """
+    return FAISS.from_documents(
         _splits,
-        embedding=embeddings,
-        persist_directory="./chroma_index"
+        embeddings,
+        persist_directory="./faiss_index"  # optional on-disk persistence
     )
+
 vectorstore = get_vectorstore(splits)
 retriever = vectorstore.as_retriever()
-
 
 # Build a history-aware retriever that uses past chat to refine searches
 
