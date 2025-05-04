@@ -1,0 +1,41 @@
+# Core
+streamlit
+python-dotenv
+ipykernel
+
+# LangChain & extensions (all <0.4.0)
+langchain
+langchain-core
+langchain-community
+langchain-groq
+langchain-huggingface
+langchain-chroma
+langchain-text-splitter
+
+# Pydantic v2 for LangChain 0.3.x
+pydantic
+
+# Vector database
+chromadb
+
+# PDF handling
+pypdf
+pymupdf
+
+# Transformers & embeddings
+sentence-transformers
+huggingface-hub
+torch
+
+# Data & utilities
+duckdb
+pandas
+wikipedia
+beautifulsoup4
+arxiv
+
+# LLMs & other APIs
+langsmith
+
+# Numerical
+numpy
