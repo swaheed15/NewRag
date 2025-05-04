@@ -39,3 +39,4 @@ langsmith
 
 # Numerical
 numpy
+protobuf==3.20.*
