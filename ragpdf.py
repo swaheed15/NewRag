@@ -3,7 +3,7 @@ os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
 import time 
 import tempfile # To store uploaded PDFs on disk temporarily
 
-import streamlit as st # Main streaamlit library 
+import streamlit as st # Main streamlit library 
  
  
 from dotenv import load_dotenv # to read .env file
@@ -23,7 +23,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 
 # vector store
-from langchain.vectorstores import FAISS
+from langchain_community.vectorstores import FAISS 
 
 ## PDF file loader (loads a single PDF into docs)
 from langchain_community.document_loaders import PyPDFLoader
