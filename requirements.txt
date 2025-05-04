@@ -1,8 +1,8 @@
 # Core
+wheel 
 streamlit
 python-dotenv
 ipykernel
-wheel
 # LangChain & extensions (all <0.4.0)
 langchain
 langchain-core
