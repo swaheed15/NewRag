@@ -9,14 +9,11 @@ langchain-core
 langchain-community
 langchain-groq
 langchain-huggingface
-langchain-chroma
+faiss-cpu
 langchain-text-splitters
 
 # Pydantic v2 for LangChain 0.3.x
 pydantic
-
-# Vector database
-chromadb
 
 # PDF handling
 pypdf
