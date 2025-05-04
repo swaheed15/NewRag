@@ -104,17 +104,12 @@ if not splits:
 
 # Build or load the Chroma vector store (caching for performance)
 
-@st.cache_resource(show_spinner=False)
+@st.cache_resource
 def get_vectorstore(_splits):
-    """
-    Builds (or loads) a FAISS index from your document splits.
-    """
-    return FAISS.from_documents(
-        _splits,
-        embeddings,
-        persist_directory="./faiss_index"  # optional on-disk persistence
-    )
+    return FAISS.from_documents(_splits, embeddings)  # no persist_directory
 
+vectorstore = get_vectorstore(splits)
+retriever = vectorstore.as_retriever()
 vectorstore = get_vectorstore(splits)
 retriever = vectorstore.as_retriever()
 
@@ -152,7 +147,7 @@ if "chathistory" not in st.session_state:
     st.session_state.chathistory = {}
 
 def get_history(session_id: str):
-    "Retriever of initialize chat history for a session"
+   
     if session_id not in st.session_state.chathistory:
         st.session_state.chathistory[session_id] = ChatMessageHistory()
     return st.session_state.chathistory[session_id]
