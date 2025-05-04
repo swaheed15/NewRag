@@ -2,7 +2,7 @@
 streamlit
 python-dotenv
 ipykernel
-
+wheel
 # LangChain & extensions (all <0.4.0)
 langchain
 langchain-core
@@ -10,7 +10,7 @@ langchain-community
 langchain-groq
 langchain-huggingface
 langchain-chroma
-langchain-text-splitter
+langchain-text-splitters
 
 # Pydantic v2 for LangChain 0.3.x
 pydantic
