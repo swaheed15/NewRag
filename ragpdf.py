@@ -1,4 +1,5 @@
-import os 
+import os
+os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
 import time 
 import tempfile # To store uploaded PDFs on disk temporarily
 
